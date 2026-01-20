@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zynq</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <img src="assets/logo.png" alt="App Logo" class="splash-logo">
+            <h1 class="splash-text">Zynq</h1>
+        </div>
+    </div>
+
+    <!-- Auth Container -->
+    <div id="auth-container" class="auth-container hidden">
+        <div class="lamp-side">
+            <div class="lamp-branding">
+                <img src="assets/logo.png" alt="Zynq Logo">
+                <h1>Zynq</h1>
+            </div>
+            <div class="lamp-wrapper">
+                <div class="lamp-shade"></div>
+                <div class="lamp-light"></div>
+                <div class="lamp-stand"></div>
+                <div class="lamp-base"></div>
+                <div class="pull-string">
+                    <div class="knob"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-side">
+            <div class="auth-content hidden-form" id="auth-content-box">
+                <div class="auth-header-logo">
+                    <img src="assets/logo.png" alt="Zynq Logo" class="auth-logo-img">
+                    <h1 class="auth-brand-title">Zynq</h1>
+                </div>
+                <h2 id="auth-title">Welcome Back</h2>
+                <p id="auth-subtitle">Turn on the light to login</p>
+
+                <!-- Login Form -->
+                <form id="login-form">
+                    <div class="input-group">
+                        <input type="text" id="login-username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Login</button>
+
+                    <div class="auth-separator">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="btn-social">
+                            <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
+                                    <path fill="#4285F4"
+                                        d="M -3.264 51.509 C -3.264 50.719 -3.334 49.969 -3.454 49.239 L -14.754 49.239 L -14.754 53.749 L -8.284 53.749 C -8.574 55.229 -9.424 56.479 -10.684 57.329 L -10.684 60.329 L -6.824 60.329 C -4.564 58.239 -3.264 55.159 -3.264 51.509 Z" />
+                                    <path fill="#34A853"
+                                        d="M -14.754 63.239 C -11.514 63.239 -8.804 62.159 -6.824 60.329 L -10.684 57.329 C -11.764 58.049 -13.134 58.489 -14.754 58.489 C -17.884 58.489 -20.534 56.379 -21.484 53.529 L -25.464 53.529 L -25.464 56.619 C -23.494 60.539 -19.444 63.239 -14.754 63.239 Z" />
+                                    <path fill="#FBBC05"
+                                        d="M -21.484 53.529 C -21.734 52.809 -21.864 52.039 -21.864 51.239 C -21.864 50.439 -21.724 49.669 -21.484 48.949 L -21.484 45.859 L -25.464 45.859 C -26.284 47.479 -26.754 49.299 -26.754 51.239 C -26.754 53.179 -26.284 54.999 -25.464 56.619 L -21.484 53.529 Z" />
+                                    <path fill="#EA4335"
+                                        d="M -14.754 43.989 C -12.984 43.989 -11.404 44.599 -10.154 45.789 L -6.734 42.369 C -8.804 40.429 -11.514 39.239 -14.754 39.239 C -19.444 39.239 -23.494 41.939 -25.464 45.859 L -21.484 48.949 C -20.534 46.099 -17.884 43.989 -14.754 43.989 Z" />
+                                </g>
+                            </svg>
+                            Google
+                        </button>
+                        <button type="button" class="btn-social">
+                            <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12c0 5.0 3.66 9.15 8.44 9.88v-7.01h-2.54V12h2.54V9.79c0-2.5 1.47-3.89 3.77-3.89 1.1 0 2.25.2 2.25.2v2.46h-1.27c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.88h-2.33v7.01C18.34 21.15 22 17.0 22 12c0-5.52-4.48-10-10-10z"
+                                    fill="#1877F2" />
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <p class="auth-switch">Don't have an account? <span id="show-register">Create Account</span></p>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="hidden">
+                    <div class="input-group">
+                        <input type="text" id="reg-username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="reg-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="reg-age" placeholder="Age" required min="13">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="reg-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Create Account</button>
+
+                    <div class="auth-separator">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="btn-social">
+                            <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
+                                    <path fill="#4285F4"
+                                        d="M -3.264 51.509 C -3.264 50.719 -3.334 49.969 -3.454 49.239 L -14.754 49.239 L -14.754 53.749 L -8.284 53.749 C -8.574 55.229 -9.424 56.479 -10.684 57.329 L -10.684 60.329 L -6.824 60.329 C -4.564 58.239 -3.264 55.159 -3.264 51.509 Z" />
+                                    <path fill="#34A853"
+                                        d="M -14.754 63.239 C -11.514 63.239 -8.804 62.159 -6.824 60.329 L -10.684 57.329 C -11.764 58.049 -13.134 58.489 -14.754 58.489 C -17.884 58.489 -20.534 56.379 -21.484 53.529 L -25.464 53.529 L -25.464 56.619 C -23.494 60.539 -19.444 63.239 -14.754 63.239 Z" />
+                                    <path fill="#FBBC05"
+                                        d="M -21.484 53.529 C -21.734 52.809 -21.864 52.039 -21.864 51.239 C -21.864 50.439 -21.724 49.669 -21.484 48.949 L -21.484 45.859 L -25.464 45.859 C -26.284 47.479 -26.754 49.299 -26.754 51.239 C -26.754 53.179 -26.284 54.999 -25.464 56.619 L -21.484 53.529 Z" />
+                                    <path fill="#EA4335"
+                                        d="M -14.754 43.989 C -12.984 43.989 -11.404 44.599 -10.154 45.789 L -6.734 42.369 C -8.804 40.429 -11.514 39.239 -14.754 39.239 C -19.444 39.239 -23.494 41.939 -25.464 45.859 L -21.484 48.949 C -20.534 46.099 -17.884 43.989 -14.754 43.989 Z" />
+                                </g>
+                            </svg>
+                            Google
+                        </button>
+                        <button type="button" class="btn-social">
+                            <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12c0 5.0 3.66 9.15 8.44 9.88v-7.01h-2.54V12h2.54V9.79c0-2.5 1.47-3.89 3.77-3.89 1.1 0 2.25.2 2.25.2v2.46h-1.27c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.88h-2.33v7.01C18.34 21.15 22 17.0 22 12c0-5.52-4.48-10-10-10z"
+                                    fill="#1877F2" />
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+                    <p class="auth-switch">Already have an account? <span id="show-login">Login</span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Page (Protected) -->
+    <div id="home-page" class="home-page hidden">
+        <div class="app-layout">
+
+            <!-- Left Sidebar -->
+            <aside class="sidebar-left">
+                <div class="brand">
+                    <img src="assets/logo.png" alt="Zynq Logo" class="sidebar-logo-img">
+                    <h1>Zynq</h1>
+                </div>
+
+                <nav class="side-nav">
+                    <a href="#" class="nav-item active" id="nav-home">Home</a>
+                    <a href="#" class="nav-item" id="sidebar-search-trigger">Search</a>
+                    <a href="#" class="nav-item" id="nav-friends">Friends</a>
+                    <a href="#" class="nav-item" id="nav-chat">Messages</a>
+                    <a href="#" class="nav-item" id="nav-profile">Profile</a>
+                    <a href="#" class="nav-item" id="nav-settings">Settings</a>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile-summary">
+                        <div class="avatar initial-avatar" id="current-user-avatar">?</div>
+                        <div class="user-info">
+                            <span class="username" id="current-username">User</span>
+                            <span class="handle" id="current-handle">@user</span>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-item logout-nav-item" id="logout-btn">Log out</a>
+                </div>
+            </aside>
+
+            <!-- Main Feed (Center) -->
+            <main class="main-feed">
+                <!-- Home Header -->
+                <div class="home-header">
+                    <div class="home-search-container">
+                        <div class="search-input-wrapper">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="home-search-input" placeholder="Search friends or posts...">
+                        </div>
+                        <div id="home-search-results" class="results-grid hidden"></div>
+                    </div>
+
+                    <div class="notif-container">
+                        <button id="notif-bell-btn" class="btn-icon">
+                            🔔
+                            <span id="notif-dot" class="notif-dot hidden"></span>
+                        </button>
+                        <div id="notif-dropdown" class="notif-dropdown hidden">
+                            <div class="notif-header">
+                                <h3>Notifications</h3>
+                            </div>
+                            <div id="notif-list" class="notif-list">
+                                <!-- Notifications will be injected here -->
+                                <p class="text-muted" style="padding: 1rem;">No notifications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stories -->
+                <div class="stories-bar">
+                    <div class="story-item" id="add-story-btn" style="cursor:pointer">
+                        <div class="story-ring add-story">
+                            <div class="avatar initial-avatar">+</div>
+                        </div>
+                        <span class="story-user">Add Story</span>
+                        <input type="file" id="story-file-input" accept="image/*,video/*" hidden>
+                    </div>
+                    <div id="active-stories" style="display:flex; gap:1rem;"></div>
+                </div>
+
+                <!-- Create Post Box -->
+                <div class="create-post-box">
+                    <div class="avatar initial-avatar small" id="post-box-avatar">?</div>
+                    <div style="flex:1; display:flex; flex-direction:column; gap:0.5rem;">
+                        <input type="text" id="create-post-input" placeholder="What's on your mind?">
+                        <div id="post-image-preview" class="hidden" style="position:relative; width: fit-content;">
+                            <img src="" id="post-preview-img" class="hidden"
+                                style="max-width:100px; border-radius:0.5rem; border:1px solid rgba(255,255,255,0.1)">
+                            <video src="" id="post-preview-video" class="hidden"
+                                style="max-width:100px; border-radius:0.5rem; border:1px solid rgba(255,255,255,0.1)"
+                                controls></video>
+                            <button id="remove-post-image"
+                                style="position:absolute; top:-5px; right:-5px; background:#ef4444; color:white; border:none; border-radius:50%; width:20px; height:20px; cursor:pointer; font-size:12px;">&times;</button>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="create-post-btn">Post</button>
+                </div>
+
+                <!-- Posts -->
+                <div id="feed-posts">
+                    <!-- Posts will be loaded here dynamically -->
+                    <div class="empty-state">
+                        <p>No posts yet. Be the first to post!</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Friends Section (Hidden by default) -->
+            <main class="friends-section hidden" id="friends-view">
+                <div class="search-bar-container">
+                    <input type="text" id="friend-search-input" placeholder="Search for users...">
+                    <button class="btn-primary" id="search-btn">Search</button>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem 0;">Search Results</h3>
+                <div id="search-results" class="results-grid"></div>
+
+                <h3 style="margin: 2rem 0 1rem 0;">My Friends</h3>
+                <div id="my-friends-grid" class="results-grid">
+                    <p class="text-muted">You have no friends yet.</p>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem 0;">Friend Requests</h3>
+                <div id="friend-requests-list" class="requests-list">
+                    <p class="text-muted">No pending requests.</p>
+                </div>
+            </main>
+
+            <!-- Chat Section -->
+            <main class="chat-section hidden" id="chat-view">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <button id="back-to-friends" class="btn-sm" style="margin-right:1rem;">&larr;</button>
+                        <div class="avatar initial-avatar small" id="chat-header-avatar">?</div>
+                        <h3 id="chat-header-name">Friend Name</h3>
+                    </div>
+                    <div class="chat-messages" id="chat-messages-area">
+                        <!-- Messages go here -->
+                    </div>
+                    <form id="chat-form" class="chat-input-area">
+                        <input type="file" id="chat-image-input" accept="image/*,video/*" hidden>
+                        <button type="button" id="chat-attach-btn" class="btn-icon">📷</button>
+                        <input type="text" id="chat-input" placeholder="Type a message..." required autocomplete="off">
+                        <button type="submit" class="btn-primary">Send</button>
+                    </form>
+                    <div id="image-preview-container" class="hidden">
+                        <span>Image attached</span> <button type="button" id="remove-img-preview">x</button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Profile View (Replaces Modal for full page feel) -->
+            <main class="profile-section hidden" id="profile-view">
+                <div class="profile-header-large">
+                    <div class="avatar-xlarge" id="profile-view-avatar"></div>
+                    <div class="profile-info-large">
+                        <h2 id="profile-view-username">Username</h2>
+                        <p id="profile-view-handle">@handle</p>
+                        <div class="profile-stats-large">
+                            <div><strong id="profile-view-posts-count">0</strong> Posts</div>
+                            <div><strong id="profile-view-friends-count">0</strong> Friends</div>
+                        </div>
+                        <div id="profile-view-actions"></div>
+                    </div>
+                </div>
+                <div class="profile-tabs"
+                    style="display:flex; gap:2rem; margin-top:2rem; border-bottom:1px solid rgba(255,255,255,0.05);">
+                    <div class="profile-tab active" id="tab-posts"
+                        style="padding:0.8rem 1.5rem; cursor:pointer; font-weight:600; color:var(--primary-color); border-bottom:2px solid var(--primary-color);">
+                        Posts</div>
+                    <div class="profile-tab" id="tab-reposts"
+                        style="padding:0.8rem 1.5rem; cursor:pointer; color:var(--text-secondary);">Reposts</div>
+                </div>
+
+                <div id="profile-posts-grid" class="posts-grid" style="margin-top:1.5rem;">
+                    <!-- Posts Grid -->
+                </div>
+                <div id="reposts-view" class="hidden" style="margin-top:1.5rem;">
+                    <!-- Reposted Posts -->
+                </div>
+            </main>
+
+            <!-- Settings View -->
+            <main class="settings-section hidden" id="settings-view">
+                <div class="settings-layout">
+                    <div class="settings-sidebar glass-panel">
+                        <h2>Settings</h2>
+                        <div class="settings-nav">
+                            <button class="settings-nav-item active" data-tab="saved">
+                                <span class="icon">🔖</span> Saved
+                            </button>
+                            <button class="settings-nav-item" data-tab="activity">
+                                <span class="icon">📊</span> Your activity
+                            </button>
+                            <button class="settings-nav-item" data-tab="notifications">
+                                <span class="icon">🔔</span> Notifications
+                            </button>
+                            <button class="settings-nav-item" data-tab="blocked">
+                                <span class="icon">🚫</span> Blocked
+                            </button>
+                            <button class="settings-nav-item" data-tab="privacy">
+                                <span class="icon">🔒</span> Account privacy
+                            </button>
+                            <button class="settings-nav-item" data-tab="security">
+                                <span class="icon">🛡️</span> Security
+                            </button>
+                            <button class="settings-nav-item" data-tab="details">
+                                <span class="icon">👤</span> Personal details
+                            </button>
+                            <button class="settings-nav-item" data-tab="about">
+                                <span class="icon">ℹ️</span> About
+                            </button>
+                        </div>
+                    </div>
+                    <div class="settings-content-area glass-panel">
+                        <div id="settings-content-saved" class="settings-tab-content">
+                            <h3>Saved Items</h3>
+                            <p class="text-muted">Your saved posts and collections will appear here.</p>
+                        </div>
+                        <div id="settings-content-activity" class="settings-tab-content hidden">
+                            <h3>Your Activity</h3>
+                            <p class="text-muted">Manage your interactions, searches, and time spent on Zynq.</p>
+                        </div>
+                        <div id="settings-content-notifications" class="settings-tab-content hidden">
+                            <h3>Notifications Settings</h3>
+                            <p class="text-muted">Choose which notifications you want to receive.</p>
+                        </div>
+                        <div id="settings-content-blocked" class="settings-tab-content hidden">
+                            <h3>Blocked Accounts</h3>
+                            <p class="text-muted">Manage the accounts you've blocked.</p>
+                        </div>
+                        <div id="settings-content-privacy" class="settings-tab-content hidden">
+                            <h3>Account Privacy</h3>
+                            <p class="text-muted">Control who can see your profile and posts.</p>
+                        </div>
+                        <div id="settings-content-security" class="settings-tab-content hidden">
+                            <h3>Security</h3>
+                            <p class="text-muted">Manage your password and account security settings.</p>
+                        </div>
+                        <div id="settings-content-details" class="settings-tab-content hidden">
+                            <h3>Personal Details</h3>
+                            <p class="text-muted">Update your email, phone number, and other personal information.</p>
+                        </div>
+                        <div id="settings-content-about" class="settings-tab-content hidden">
+                            <h3>About Zynq</h3>
+                            <p class="text-muted">Version 1.0.0. Made with love for the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Sidebar (Suggestions) -->
+            <aside class="sidebar-right">
+                <h3>Trending for you</h3>
+                <div class="trending-list">
+                    <div class="trending-item">
+                        <span>#ZynqLaunch</span>
+                        <small>Trending now</small>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Suggested Friends</h3>
+                <div id="suggestion-list">
+                    <p style="color:var(--text-secondary); font-size:0.9rem;">No suggestions yet.</p>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-modal">&times;</span>
+            <div class="profile-header-modal">
+                <div class="avatar-large" id="modal-avatar"></div>
+                <h2 id="modal-username">Username</h2>
+                <p id="modal-handle" class="text-muted">@handle</p>
+
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <strong id="modal-posts-count">0</strong>
+                        <span>Posts</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="modal-friends-count">0</strong>
+                        <span>Friends</span>
+                    </div>
+                </div>
+
+                <div class="profile-actions" id="modal-actions">
+                    <!-- Action buttons injected here -->
+                </div>
+
+                <p class="text-muted" style="margin-top:1rem; font-size:0.9rem;">Joined <span
+                        id="modal-join-date">Date</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Modal -->
+    <div id="comment-modal" class="modal">
+        <div class="modal-content glass-panel" style="max-width: 500px;">
+            <span class="close-modal" id="close-comment-modal">&times;</span>
+            <h3>Comments</h3>
+            <div id="modal-comments-list"
+                style="max-height: 300px; overflow-y: auto; margin: 1rem 0; display:flex; flex-direction:column; gap:0.8rem;">
+            </div>
+            <div class="comment-input-area" style="display:flex; gap:0.5rem;">
+                <input type="text" id="modal-comment-input" placeholder="Write a comment..."
+                    style="flex:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; padding:0.6rem; border-radius:0.5rem; outline:none;">
+                <button class="btn-primary" id="modal-submit-comment">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share with Friends Modal -->
+    <div id="share-friends-modal" class="modal">
+        <div class="modal-content glass-panel" style="max-width: 400px;">
+            <span class="close-modal" id="close-share-modal">&times;</span>
+            <h3 style="margin-bottom: 0.5rem;">Share to Friends</h3>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">Select a friend to share this post
+                with.</p>
+            <div id="share-friends-list"
+                style="max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 0.5rem;">
+                <!-- Friends will be listed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
