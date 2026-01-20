@@ -852,19 +852,6 @@ For issues, questions, or suggestions:
 
 ---
 
-## 📜 License
-
-This project is private and for educational purposes.
-
----
-
-## 👨‍💻 Author
-
-**Zynq Development Team**  
-Built with ❤️ using Node.js, Express, MongoDB, and Cloudinary
-
----
-
 ## 🎉 Happy Coding!
 
 Start building your social network with Zynq!
